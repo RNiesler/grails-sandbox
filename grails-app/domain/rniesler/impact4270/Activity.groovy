@@ -3,10 +3,12 @@ package rniesler.impact4270
 class Activity {
 
     static constraints = {
-        radiographyAffectedZone(nullable: true)
+        name(validator: validatorClosure)
     }
 
-    static hasMany = [ attachments: ActivityAttachment ]
+    String name
 
-    ActivityAttachment radiographyAffectedZone
+    static validatorClosure = { String name, Activity activity ->
+        return true
+    }
 }
