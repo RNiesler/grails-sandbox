@@ -72,6 +72,7 @@ hibernate:
         use_second_level_cache: true
         use_query_cache: false
         region.factory_class: 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
+    event.merge.entity_copy_observer: 'grails.sandbox.EntityCopyExceptionallyAllowedObserver'
 
 endpoints:
     jmx:
@@ -83,6 +84,7 @@ dataSource:
     driverClassName: org.h2.Driver
     username: sa
     password:
+    logSql: true
 
 environments:
     development:
